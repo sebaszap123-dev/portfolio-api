@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pydantic-settings = "*"
+redis = "*"
+aiosqlite = "*"
+sqlalchemy = "*"
+sqladmin = "*"
+alembic = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
+pendulum = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

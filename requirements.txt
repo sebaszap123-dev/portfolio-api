@@ -1,0 +1,6 @@
+aiosqlite==0.21.0
+fastapi[standard]==0.115.13
+pydantic-settings==2.10.1
+redis==6.2.0
+sqladmin==0.20.1
+SQLAlchemy==2.0.41
