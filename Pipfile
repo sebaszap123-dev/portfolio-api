@@ -4,14 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pydantic-settings = "*"
-redis = "*"
-aiosqlite = "*"
-sqlalchemy = "*"
-sqladmin = "*"
-alembic = "*"
-python-jose = {extras = ["cryptography"], version = "*"}
 pendulum = "*"
+aiosqlite = "==0.21.0"
+fastapi = {extras = ["standard"], version = "==0.115.13"}
+pydantic-settings = "==2.10.1"
+redis = "==6.2.0"
+sqladmin = {extras = ["full"], version = "==0.20.1"}
+sqlalchemy = "==2.0.41"
+alembic = "==1.16.2"
+python-jose = {extras = ["cryptography"], version = "==3.5.0"}
 
 [dev-packages]
 
