@@ -42,7 +42,7 @@ class Settings(BaseSettings):
     redis: RedisSettings = RedisSettings()
     admin: AdminSettings = AdminSettings()
     api_key: SecretStr = Field(default="supersecretkey123")
-
+    smtp_password: SecretStr = Field(default="abcdefg123456")
     model_config = SettingsConfigDict(
         env_file=ENV_FILE,
         env_file_encoding="utf-8",

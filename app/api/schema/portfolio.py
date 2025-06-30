@@ -1,6 +1,6 @@
 # schemas/portfolio.py
 from datetime import date
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional, List, Union
 
 
@@ -16,7 +16,7 @@ class ExperienceSchema(BaseModel):
     achievements: Optional[Union[List[str], dict]]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ProjectSchema(BaseModel):
@@ -34,7 +34,7 @@ class ProjectSchema(BaseModel):
     details: Optional[str] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class CertificationSchema(BaseModel):
@@ -47,4 +47,13 @@ class CertificationSchema(BaseModel):
     credential_url: Optional[str]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
+class ContactSchema(BaseModel):
+    name: str = Field(..., description="The name of the person contacting")
+    email: str = Field(..., description="The email of the person contacting")
+    message: str = Field(..., description="The message of the person contacting")
+
+class ContactResponseSchema(BaseModel):
+    ok: bool = Field(..., description="Whether the contact was sent successfully")
+    msg: str = Field(..., description="The message to the person contacting")

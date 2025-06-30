@@ -1,7 +1,6 @@
 # routes/portfolio.py
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.auth.api_security import api_key_auth
 from app.database.database import get_db
 from app.database.models.portfolio import Experience, Project, Certification
 from app.api.schema.portfolio import (
@@ -12,7 +11,7 @@ from app.api.schema.portfolio import (
 from sqlalchemy.future import select
 from typing import List
 
-router = APIRouter(tags=["Portfolio"], dependencies=[Depends(api_key_auth)])
+router = APIRouter(tags=["Portfolio"])
 
 
 @router.get("/experiences", response_model=List[ExperienceSchema])
