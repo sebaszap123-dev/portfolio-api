@@ -13,7 +13,7 @@ class Experience(Base):
     is_current = Column(Boolean, default=False)
     employment_type = Column(String(50), comment='"Remote", "Hybrid", "On-site", etc.')
     description = Column(String(500))
-    achievements = Column(JSON)  # Almacena la lista de logros como JSON
+    technologies = Column(JSON)
 
     def __repr__(self):
         return f"<Experience(title='{self.title}', company='{self.company}')>"

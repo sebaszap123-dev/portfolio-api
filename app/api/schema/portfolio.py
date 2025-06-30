@@ -13,7 +13,7 @@ class ExperienceSchema(BaseModel):
     is_current: bool
     employment_type: Optional[str]
     description: Optional[str]
-    achievements: Optional[Union[List[str], dict]]
+    technologies: Optional[Union[List[str], dict]]
 
     class Config:
         from_attributes = True

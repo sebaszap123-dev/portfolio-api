@@ -12,7 +12,7 @@ class ExperienceAdmin(ModelView, model=Experience):
         Experience.is_current,
         Experience.employment_type,
         Experience.description,
-        Experience.achievements,
+        Experience.technologies,
     ]
     column_searchable_list = [Experience.title, Experience.company]
     column_sortable_list = [
