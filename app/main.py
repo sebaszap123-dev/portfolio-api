@@ -6,16 +6,7 @@ from app.database.database import Base, engine
 from app.api.router import router as main_router
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Create database tables
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-
-    yield  # This separates startup and shutdown logic
-
-
-app = FastAPI(title="Async FastAPI with SQLite and Redis", lifespan=lifespan)
+app = FastAPI(title="Async FastAPI with SQLite and Redis")
 app.include_router(main_router)
 setup_cors(app)
 admin = setup_admin(app, engine)
